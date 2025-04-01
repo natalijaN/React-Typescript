@@ -1,0 +1,13 @@
+# Node.js dependencies (to avoid copying node_modules)
+node_modules/
+
+# Log files
+*.log
+
+# Git configuration and history
+.git/
+.gitignore
+
+# Ignore documentation files
+README.md
+LICENSE

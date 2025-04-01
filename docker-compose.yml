@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  # Web service (React app)
+  web:
+    build: .
+    container_name: react_app
+    ports:
+      - "3000:80"  # Expose the app on port 3000 of the host
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./src:/app/src  # Useful for development with hot-reloading
+      - /app/node_modules  # Prevents overriding node_modules in the container
+    networks:
+      - react-network
+
+networks:
+  react-network:
+    driver: bridge
